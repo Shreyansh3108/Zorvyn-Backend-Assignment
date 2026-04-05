@@ -187,47 +187,12 @@ The `FinanceRecord` model utilizes targeted indexing on `createdBy`, `type`, and
    ```bash
    git clone <your-github-repo-link-here>
    cd zorvyn-backend
-Install Dependencies
-
-Bash
 npm install
-Configure Environment Variables
-Create a .env file in the root directory and add your secure keys:
 
-Code snippet
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_super_secret_dev_key
-Boot the Server
 
-Bash
-npm run dev
-🧪 Testing with Postman
-To test the private routes in this API, you will need to authenticate:
-
-Make a POST request to /api/users/login with your credentials.
-
-Copy the token string from the JSON response.
-
-For all /api/finance and /api/dashboard requests, go to the Authorization tab in Postman.
-
-Select Bearer Token and paste your token into the field.
-
-📡 API Endpoints
-🔐 Authentication (/api/users)
-Method	Route	Description	Auth Required
-POST	/register	Create a new user account	❌
-POST	/login	Authenticate and receive JWT	❌
-💰 Transactions (/api/finance)
-Method	Route	Description	Auth Required
-GET	/	Fetch all records for the logged-in user	✅ (Any Role)
-POST	/	Create a new financial record	✅ (Admin)
-PUT	/:id	Update an owned record	✅ (Admin)
-DELETE	/:id	Permanently delete an owned record	✅ (Admin)
-📊 Analytics (/api/dashboard)
-Method	Route	Description	Auth Required
-GET	/summary	Retrieve aggregated totals, 30-day rolling expenses, and recent feed	✅ (Any Role)
-
-
-Developed by Shreyansh Dwivedi as a technical assessment for backend engineering.
-   
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_dev_key
